@@ -54,6 +54,8 @@ class ShowHelloWorld extends Command
     {
         $result = file_get_contents('https://api.vk.com/method/groups.getById?group_ids=' . $publicId);
 
+
+        echo 1;
         return json_decode($result);
     }
 
