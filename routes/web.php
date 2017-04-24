@@ -19,6 +19,7 @@ Route::get('/communities', '\App\Http\Controllers\CommunityController@index');
 
 Route::get('/save-comm', '\App\Http\Controllers\CommunityController@save');
 
+Route::get('/check-comm', '\App\Http\Controllers\CommunityController@check');
 
 Route::get('/hello', function () {
     echo 'Hello world!';

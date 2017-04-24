@@ -29,4 +29,11 @@ class CommunityController extends Controller
 
         return redirect('/communities');
     }
+
+    //Проверка введённого значения - является ли это пабликом, и что это вообще за паблик
+    public function check(Request $request)
+    {
+        $publicLink = $request->get('public_link');
+        return $publicLink;
+    }
 }
