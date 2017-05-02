@@ -1,0 +1,226 @@
+/*.btn-success {*/
+    /*background-color: #111111;*/
+    /*color: #080808;*/
+    /*background-image: linear-gradient(to bottom,#000000 0,#ffffff 100%);*/
+/*}*/
+body {
+    z-index: 1;
+}
+
+.row {
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+#inForm {
+    position: relative;
+    vertical-align: middle;
+}
+
+.public-in-form {
+    border: 1px solid  #cccccc;
+    border-bottom-right-radius: 0px;
+    border-top-right-radius: 0px;
+    background-color:transparent;
+    width: 196px !important;
+    display: inline;
+    padding-right: 22px;
+}
+
+#clearInput {
+    /*display: none;*/
+    border: none;
+    background: none;
+    cursor: pointer;
+    margin-left: -30px;
+    margin-top: 3px;
+    padding: 0px;
+    /*border: 1px solid black;*/
+    position: absolute;
+}
+
+.public-check-btn {
+    position: absolute;
+    border: 1px solid #cccccc;
+    border-bottom-left-radius: 0px;
+    border-top-left-radius: 0px;
+    /*margin-left: -4px;*/
+    /*margin-top: -2.5px;*/
+    background-image: none;
+    border-left: none;
+    height: 34px;
+    width: 95px;
+    text-align: center;
+}
+
+.public-check-btn:hover {
+    border: 1px solid #cccccc;
+    border-left: none;
+}
+
+#test {
+    /*border: 1px solid red;*/
+    display: inline;
+    position: absolute;
+    /*height: 34px;*/
+    left: 300px;
+    top: 5px;
+    /*vertical-align: middle;*/
+}
+
+
+#public-menu {
+    border-left: 1px solid #cccccc;
+    border-right: 1px solid #cccccc;
+    height: 0px;
+    width: 290px;
+    position: absolute;
+    z-index: 2;
+    background-color: white;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    -webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.2);
+    -moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.2);
+    box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.2);
+    display: block;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-transition: height 0.5s;
+    -moz-transition: height 0.5s;
+    -ms-transition: height 0.5s;
+    -o-transition: height 0.5s;
+    transition: height 0.5s;
+    margin-top: -1px;
+}
+
+
+#preloaderInText {
+    margin: 0px;
+}
+
+#preloaderInImg {
+    display: none;
+    margin: auto;
+    animation: rotata 0.7s infinite linear;
+}
+
+@keyframes rotata {
+    from {transform: rotate(0deg)}
+    to {transform: rotate(360deg)}
+}
+
+.pubCheck {
+    width: 10px;
+    padding: 1px !important;
+}
+
+.trPubList {
+    width: 100%;
+    display: inline-table;
+}
+
+.tablePubList{
+    margin: 0px;
+}
+.tbodyPubList{
+    width: 100%;
+    position: absolute;
+    /*border: 1px solid red;*/
+}
+
+td {
+    /*border: 1px solid green;*/
+}
+
+tr:hover {
+    background-color: #eeeeee;
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    /*border: 1px solid lightgray;*/
+    /*background-image: url(https://pp.userapi.com/c608324/v608324580/4c45/EFv1W8a4Sek.jpg);*/
+}
+
+.pubAva {
+    width: 67px;
+}
+
+.pubContent {
+    /*width: 201px;*/
+    width: 189px;
+    height: 66px;
+    padding-left: 0px !important;
+}
+
+.pubLink {
+    white-space: nowrap; /* Отменяем перенос текста */
+    overflow: hidden; /* Обрезаем содержимое */
+    text-overflow: ellipsis; /* Многоточие */
+    font-weight: bold;
+}
+
+.pubType {
+    /*width: 130px;*/
+    width: 65%;
+    float: left;
+    color: gray;
+    height: 15px;
+}
+.pubStatus {
+    display: block;
+    float: right;
+    /*width: 55px;*/
+    width: 35%;
+    height: 15px;
+    text-align: right;
+    color: #ff8e8e;
+    font-weight: bold;
+}
+.pubCount {
+    color: gray;
+    height: 15px;
+}
+
+.pubType, .pubStatus, .pubCount {
+    font-size: 8pt;
+}
+
+.pubLink, .pubCount {
+    display: block;
+    width: 173px;
+}
+
+.verified {
+    margin-top: -2px;
+}
+
+#searchError {
+    width: 288px;
+    height: 66px;
+    text-align: center;
+    color: #ff8e8e;
+    font-weight: bold;
+    font-size: 10pt;
+    padding: 4px;
+    padding-left: 10px;
+    padding-right: 10px;
+    vertical-align: middle;
+}
+
+.publiclist {
+    z-index: 1;
+    position: relative;
+    /*background-color: gold;*/
+}
+
+::-webkit-scrollbar{
+    width:5px;
+}
+
+::-webkit-scrollbar-thumb{
+    border-width:1px 1px 1px 2px;
+    border-color: #777;
+    background-color: #dddddd;
+}
