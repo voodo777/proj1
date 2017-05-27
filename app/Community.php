@@ -19,6 +19,6 @@ class Community extends Model
     const STATUS_IN_WORK = 1;
     const STATUS_PARSED = 2;
 
-
+//    public $table = 'dsfmhasdlf';
 
 }

@@ -1,0 +1,20 @@
+a {
+    color: white;
+    padding: 8px 16px;
+    background: #5e82a8;
+    border-radius: 6px;
+    position: absolute;
+    font-size: 16pt;
+    text-decoration: none;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 700;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -21px 0 0 -42px;
+}
+
+a:hover {
+    /*text-decoration: underline;*/
+    background: #4774a4;
+}

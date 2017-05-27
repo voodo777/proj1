@@ -5,75 +5,224 @@
 /*}*/
 body {
     z-index: 1;
+    font-size: 12px;
+}
+
+a {
+    color: #2b587a;
+}
+
+#header, #headerContainer, .row {
+    width: 980px;
+}
+
+#container {
+    width: 982px;
+    padding: 0px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: auto;
+    margin-left: auto;
+    margin: 10px auto;
+    border: 1px solid #c4cde0;
+    border-radius: 3px;
+    background-color: #fff;
+}
+
+#header {
+    /*border: 1px solid red;*/
+    height: 39px;
+    /*background-color: #f1f1f1;*/
+    background: #f1f1f1;
+    border: 1px solid #fff;
+    border-radius: 2px;
+    border-bottom: 1px solid #d8dfea;
+}
+
+#header span {
+    /*border: 1px solid black;*/
+    color: #45688e;
+    font-weight: 700;
+    padding: 2px 5px;
+    margin-top: 8px;
+    margin-left: 5px;
+    display: inline-block;
+    border-radius: 3px;
+}
+
+#header span:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.userForm {
+    float: right;
+    display: block;
+    margin-top: 6px;
+    margin-right: 10px;
+    /*border: 1px solid gold;*/
+    font-weight: 700;
+}
+
+#userFormAva {
+    margin-right: 5px;
+}
+
+.userFormLink {
+    max-width: 250px;
+    display: inline-block;
+    white-space: nowrap; /* Отменяем перенос текста */
+    overflow: hidden; /* Обрезаем содержимое */
+    text-overflow: ellipsis; /* Многоточие */
+    /*border: 1px solid green;*/
+    margin-right: 10px;
+}
+
+#userFormLinkA1, #userFormLinkA2 {
+    /*border: 1px solid blue;*/
+    height: 25px;
+    display: inline-block;
+}
+
+#userFormLinkA2 {
+    float: right;
+}
+
+#headerContainer {
+    height: 44px;
+    background: #dee5eb;
+    /*border: 1px solid red;*/
+}
+
+#headerContainer input {
+    background: #ffffff;
+    /*border: 1px solid red;*/
+    font-size: 12px !important;
+    height: 24px;
 }
 
 .row {
-    margin-bottom: 10px;
-    margin-top: 10px;
+    margin: 0px;
 }
 
-#inForm {
-    position: relative;
-    vertical-align: middle;
+
+
+
+.menuWrapper {
+    display: block;
+    float: left;
+    margin: 10px;
+    margin-right: 0px;
+    /*border: 1px solid black;*/
 }
 
-.public-in-form {
+/*.menuContainer {*/
+    /*/!*border: 1px solid black;*!/*/
+    /*height: 44px;*/
+    /*vertical-align: middle;*/
+/*}*/
+
+
+.publicForm {
+    /*margin-top: 16px;*/
     border: 1px solid  #cccccc;
+    border-radius: 3px;
     border-bottom-right-radius: 0px;
     border-top-right-radius: 0px;
     background-color:transparent;
     width: 196px !important;
-    display: inline;
+    display: inline-block;
+    padding-top: 2px;
+    padding-bottom: 2px;
     padding-right: 22px;
+    float: left;
+    z-index: 5;
+    /*transition-property: border;*/
+    /*transition-duration: 10s;*/
 }
 
-#clearInput {
-    /*display: none;*/
+.clearInput {
+    display: block;
+    margin-top: -1px;
+    margin-left: 170px;
     border: none;
     background: none;
     cursor: pointer;
-    margin-left: -30px;
-    margin-top: 3px;
+    /*margin-left: -30px;*/
     padding: 0px;
     /*border: 1px solid black;*/
     position: absolute;
 }
 
 .public-check-btn {
-    position: absolute;
+    /*position: absolute;*/
     border: 1px solid #cccccc;
+    /*border: 1px solid red;*/
+    /*margin-left: -4px;*/
+    /*margin-top: -2px;*/
+    border-radius: 3px;
     border-bottom-left-radius: 0px;
     border-top-left-radius: 0px;
     /*margin-left: -4px;*/
     /*margin-top: -2.5px;*/
     background-image: none;
+    background: #f1f1f1;
     border-left: none;
-    height: 34px;
-    width: 95px;
+    height: 24px;
+    width: 24px;
     text-align: center;
+    /*margin-top: 16px;*/
+    display: inline-block;
+    padding: 1px;
+    float: left;
 }
 
 .public-check-btn:hover {
     border: 1px solid #cccccc;
     border-left: none;
+    background-image: none;
+    background: #bbbbbb;
 }
 
-#test {
-    /*border: 1px solid red;*/
-    display: inline;
-    position: absolute;
-    /*height: 34px;*/
-    left: 300px;
-    top: 5px;
+
+/*.menuContainerDescription {*/
+    /*height: auto;*/
+    /*padding-top: 10px;*/
+    /*font-weight: bold;*/
+    /*color: gray;*/
+/*}*/
+
+/*.pubSelContDesc {*/
+    /*width: 291px;*/
+/*}*/
+
+/*.timePickContDesc {*/
+    /*width: 100px;*/
+/*}*/
+
+/*#inForm {*/
+    /*position: relative;*/
     /*vertical-align: middle;*/
-}
+/*}*/
 
 
-#public-menu {
+
+/*#test {*/
+    /*/!*border: 1px solid red;*!/*/
+    /*display: inline;*/
+    /*position: absolute;*/
+    /*/!*height: 34px;*!/*/
+    /*left: 300px;*/
+    /*top: 5px;*/
+    /*/!*vertical-align: middle;*!/*/
+/*}*/
+
+
+.publicMenu {
     border-left: 1px solid #cccccc;
     border-right: 1px solid #cccccc;
     height: 0px;
-    width: 290px;
+    width: 220px;
     position: absolute;
     z-index: 2;
     background-color: white;
@@ -90,15 +239,16 @@ body {
     -ms-transition: height 0.5s;
     -o-transition: height 0.5s;
     transition: height 0.5s;
-    margin-top: -1px;
+    margin-top: 24px;
 }
 
 
-#preloaderInText {
+
+.preloaderText {
     margin: 0px;
 }
 
-#preloaderInImg {
+.preloaderImg {
     display: none;
     margin: auto;
     animation: rotata 0.7s infinite linear;
@@ -110,8 +260,12 @@ body {
 }
 
 .pubCheck {
-    width: 10px;
+    width: 24px;
     padding: 1px !important;
+}
+
+.pubCheckButton {
+    cursor: pointer;
 }
 
 .trPubList {
@@ -129,29 +283,57 @@ body {
 }
 
 td {
-    /*border: 1px solid green;*/
+    border: 0px !important;
+}
+
+tr {
+    border-top: 1px solid #ddd
 }
 
 tr:hover {
     background-color: #eeeeee;
 }
 
-.avatar {
+
+.pubAva {
     width: 50px;
-    height: 50px;
+    padding: 0px !important;
+    padding-left: 4px !important;
+}
+
+.avatar, .avatarMedium, .smallAvatar {
+    width: 42px;
+    height: 42px;
+    display: inline-block;
+    margin: 4px;
+    margin-left: 0px;
+    float: left;
+    background-repeat: no-repeat;
+    background-position: center center;
     /*border: 1px solid lightgray;*/
     /*background-image: url(https://pp.userapi.com/c608324/v608324580/4c45/EFv1W8a4Sek.jpg);*/
 }
 
-.pubAva {
-    width: 67px;
+.avatarMedium {
+    width: 32px;
+    height: 32px;
 }
+
+.smallAvatar {
+    width: 25px;
+    height: 25px;
+}
+
 
 .pubContent {
     /*width: 201px;*/
-    width: 189px;
-    height: 66px;
+    width: 126px;
+    /*max-width: 183px;*/
+    height: 50px;
+    padding: 4px !important;
     padding-left: 0px !important;
+    right: 0px !important;
+    display: inline-block;
 }
 
 .pubLink {
@@ -159,51 +341,57 @@ tr:hover {
     overflow: hidden; /* Обрезаем содержимое */
     text-overflow: ellipsis; /* Многоточие */
     font-weight: bold;
+    height: 15px;
+    font-size: 11px;
 }
 
 .pubType {
     /*width: 130px;*/
-    width: 65%;
+    width: 90%;
     float: left;
     color: gray;
-    height: 15px;
+    /*height: 14px;*/
+    min-width: 90px;
 }
 .pubStatus {
     display: block;
     float: right;
     /*width: 55px;*/
-    width: 35%;
-    height: 15px;
+    width: 10%;
+    /*height: 15px;*/
     text-align: right;
     color: #ff8e8e;
     font-weight: bold;
 }
 .pubCount {
     color: gray;
-    height: 15px;
+    /*height: 15px;*/
+    clear: both;
 }
 
 .pubType, .pubStatus, .pubCount {
     font-size: 8pt;
+    /*border: 1px solid red;*/
 }
 
 .pubLink, .pubCount {
     display: block;
-    width: 173px;
+    /*width: 173px;*/
+    width: 100%;
 }
 
 .verified {
-    margin-top: -2px;
+    margin-top: -3px;
 }
 
-#searchError {
+.searchError {
     width: 288px;
     height: 66px;
     text-align: center;
     color: #ff8e8e;
     font-weight: bold;
     font-size: 10pt;
-    padding: 4px;
+    padding: 4px !important;
     padding-left: 10px;
     padding-right: 10px;
     vertical-align: middle;
@@ -215,6 +403,72 @@ tr:hover {
     /*background-color: gold;*/
 }
 
+.publicContainer {
+    /*/!*border: 1px solid black;*!/*/
+    /*width: 291px;*/
+    /*height: 67px;*/
+    /*/!*display: inline-block;*!/*/
+    /*/!*width: auto;*!/*/
+    display: none;
+    margin-top: -12px;
+    width: 220px;
+
+}
+
+
+
+
+.publicParamWrapper {
+    /*position: relative;*/
+    /*left: 60px;*/
+    /*border: 1px solid red;*/
+    display: inline-block;
+    /*width: 198px;*/
+    height: 30px;
+    margin-top: 9px;
+    /*width: auto;*/
+    float: left;
+    max-width: 140px;
+}
+
+
+/*.pubCount {*/
+    /*/!*border: 1px solid black;*!/*/
+    /*/!*float: left;*!/*/
+    /*/!*width: auto;*!/*/
+    /*width: 173px;*/
+    /*clear: both;*/
+/*}*/
+
+.pubSelCancel {
+    /*border: 1px solid gray;*/
+    display: inline-block;
+    width: 28px;
+    height: 32px;
+    margin: 4px;
+    margin-right: 0px;
+    /*float: left;*/
+    cursor: pointer;
+    background-image: url(/img/cross.png);
+    background-repeat: no-repeat;
+    background-position: center 5px;
+    background-size: contain;
+}
+
+.statLink, .statLink:hover {
+    color: gray;
+}
+
+.col-sm-6 {
+    padding: 0px;
+}
+.dateInputForm {
+    width: 128px !important;
+    border-radius: 3px;
+    padding: 2px 10px;
+}
+
+
 ::-webkit-scrollbar{
     width:5px;
 }
@@ -223,4 +477,47 @@ tr:hover {
     border-width:1px 1px 1px 2px;
     border-color: #777;
     background-color: #dddddd;
+}
+
+/*Фикс дейтпикера*/
+.dropdown-menu  {font-size: 10pt !important;}
+.day {padding: 2px !important;}
+.bootstrap-datetimepicker-widget.dropdown-menu {width: 350px !important;}
+.bootstrap-datetimepicker-widget table td.active, .bootstrap-datetimepicker-widget table td.active:hover {background-color: #45688e !important;}
+.bootstrap-datetimepicker-widget table td.today:before {border-width: 0 0 5px 5px !important;}
+thead tr {color: #45688e;}
+.bootstrap-datetimepicker-widget a[data-action] {padding: 0 0 !important;}
+.table-condensed>tbody>tr>td, .table-condensed>tbody>tr>th, .table-condensed>tfoot>tr>td, .table-condensed>tfoot>tr>th, .table-condensed>thead>tr>td, .table-condensed>thead>tr>th {padding: 0px !important;}
+.bootstrap-datetimepicker-widget .row {width: 350px}
+.timepicker {width: 40%}
+.datepicker {width: 60%}
+.timepicker, .datepicker {padding: 0px 7px;}
+.timepicker tr:first-child {border-top: none}
+
+.addMonitorBtn {
+    font-size: 12px;
+    border-radius: 3px;
+    padding: 2.5px 10px;
+    height: 24px;
+    background-color: #5e82a8;
+    color: #fff;
+    border: none;
+}
+.addMonitorBtn:hover {
+    background-color: #4774a4;
+    color: #fff;
+}
+
+.animateBorder {
+    animation: alertBorder 5s;
+    -webkit-animation: alertBorder 5s;
+}
+
+@keyframes alertBorder {
+    from {border: 1px solid #ff4e4e;}
+    to {border: 1px solid #cccccc;}
+}
+@keyframes alertBorder {
+    from {border: 1px solid #ff4e4e;}
+    to {border: 1px solid #cccccc;}
 }

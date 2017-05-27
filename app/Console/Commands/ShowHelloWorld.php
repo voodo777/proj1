@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use App\Community;
+use App\Helpers\VkHelper;
 use App\User;
 use Illuminate\Console\Command;
 
@@ -39,15 +40,12 @@ class ShowHelloWorld extends Command
      */
     public function handle()
     {
-        /** @var Community[] $awww */
-        $awww = Community::where('status', '=', Community::STATUS_AWAITING)->get();
-        foreach ($awww as $community) {
-            $publicInfo = $this->getInfoFromContactAboutPublic($community->vk)->response[0];
-            $community->name = $publicInfo->name;
-            $community->status = Community::STATUS_PARSED;
-            $community->save();
-//            usleep(300000);
-        }
+        echo 'Hello World!'.PHP_EOL;
+        echo date('l jS \of F Y h:i:s A').PHP_EOL;
+
+
+//        $vk = new VkHelper();
+//        dd($vk->makeAuthLink());
     }
 
     public function getInfoFromContactAboutPublic($publicId)
@@ -77,9 +75,11 @@ class ShowHelloWorld extends Command
 
     public function showHowStoreLogicInModel() {
 
-        /** @var User $user */
-        $user = User::find(1);
-        dd($user->getInfoFromContact());
+        $vk = new VkHelper();
+        $list = $vk->api('groups.getById', [
+            'group_ids' => [1,2,3,4],
+        ]);
+        dd($list);
     }
 
 }
