@@ -15,7 +15,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class commIn  extends Model
 {
-
+    protected $table='commIn';
 }
 //
 //Таблица "commIn" - уникальные рекламируемые паблики, для формирования правого меню кампаний

@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\Model;
  * Class Community
  * @package App
  * @property int id
- * @property string addTime
  * @property int status
  * @property int crossBefore
  * @property string crossBeforeTime
@@ -32,7 +31,6 @@ class Monitor extends Model
 
 //Таблица "Monitors"
 //* id: 				id монитора (внутренний)
-//* addTime: 			Время добавления монитора
 //* status:	 		Статус монитора (в ожидании, в процессе, завершённый, удалённый, ошибка)
 //* crossBefore: 		Пересекаемость ДО
 //* crossBeforeTime: 	Время проверки пересекаемости До

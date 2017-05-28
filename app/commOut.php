@@ -8,13 +8,12 @@ use Illuminate\Database\Eloquent\Model;
  * @package App
  * @property int id
  * @property int gid
- * @property string newestPostDate
  * @property string created_at
  * @property string updated_at
  */
 class commOut  extends Model
 {
-
+    protected $table='commOut';
 }
 
 //

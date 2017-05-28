@@ -36,21 +36,27 @@
 
     <div class="row">
         <table class="table publiclist">
-            @foreach($comms as $community)
-                <tr>
-                    <td>{{$community->id}}</td>
-                    <td>{{$community->vk}}</td>
-                    <td>{{$community->name}}</td>
-                    <td>{{$community->status}}</td>
+            @foreach($monitors as $m)
+                <tr id="{{$m->id}}">
+                    <td>{{$m->gidIn}}</td>
+                    <td>{{$m->countIn}}</td>
+                    <td>{{$m->gidOut}}</td>
+                    <td>{{$m->countOut}}</td>
+                    <td>{{$m->postTime}}</td>
+                    <td><script>
+                            new Date({{$m->status}})
+{{--                            console.log({{$m->status}})--}}
+                            {{--console.log(new Date({{$m->status}}))--}}
+                        </script></td>
                 </tr>
             @endforeach
         </table>
 
     </div>
-    <span style="color: red">{{$userToken}}</span>
+    {{--<span style="color: red">{{$userToken}}</span>--}}
 
-    <input type="datetime" атрибуты>
-    <input type="datetime-local" атрибуты>
+    {{--<input type="datetime" атрибуты>--}}
+    {{--<input type="datetime-local" атрибуты>--}}
 
 
 

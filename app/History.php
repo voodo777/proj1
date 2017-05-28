@@ -14,14 +14,12 @@ use Illuminate\Database\Eloquent\Model;
  * @property boolean verified
  * @property string type
  * @property int is_closed
- * @property string dateIn
- * @property string dateOut
  * @property string created_at
  * @property string updated_at
  */
 class History extends Model
 {
-
+    protected $table='history';
 }
 
 //Таблица "History" - история изменений имени, верифицированности, авы. Запись сюда добавляется в том случае, если эти три поля не совпадают с переданными на этапе добавления монитора

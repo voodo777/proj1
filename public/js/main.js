@@ -562,8 +562,34 @@ function ready () {
         document.getElementById('publicMenuIn').style['width']='215px';
         document.getElementById('publicMenuOut').style['width']='215px';
     }
-//        document.getElementById('publicLinkIn').addEventListener('focus', function () {changePublicMenuState (true)},true);
-//        document.getElementById('publicLinkIn').addEventListener('blur', function () {setTimeout( function () {changePublicMenuState (false)}, 1000)},true);
+        //document.getElementById('publicLinkIn').addEventListener('focus', function () {changePublicMenuState (true)},true);
+        //document.getElementById('publicLinkIn').addEventListener('blur', function () {setTimeout( function () {changePublicMenuState (false)}, 1000)},true);
+        var focusInputIn=false, focusInputOut=false, focusMenuIn=false, focusMenuOut=false;
+        document.getElementById('publicLinkIn').addEventListener('focus', function () {focusInputIn=true;checkSelectorFocus(focusInputIn, focusMenuIn, 'In');},true);
+        document.getElementById('publicMenuIn').addEventListener('focus', function () {focusMenuIn=true;checkSelectorFocus(focusInputIn, focusMenuIn, 'In');},true);
+        document.getElementById('publicLinkIn').addEventListener('blur', function () {focusInputIn=false; setTimeout(function () {checkSelectorFocus(focusInputIn, focusMenuIn, 'In');}, 100);},true);
+        document.getElementById('publicMenuIn').addEventListener('blur', function () {focusMenuIn=false;setTimeout(function () {checkSelectorFocus(focusInputIn, focusMenuIn, 'In');}, 100);},true);
+        document.getElementById('publicLinkOut').addEventListener('focus', function () {focusInputOut=true;checkSelectorFocus(focusInputOut, focusMenuIn, 'Out');},true);
+        document.getElementById('publicMenuOut').addEventListener('focus', function () {focusMenuOut=true;checkSelectorFocus(focusInputOut, focusMenuIn, 'Out');},true);
+        document.getElementById('publicLinkOut').addEventListener('blur', function () {focusInputOut=false; setTimeout(function () {checkSelectorFocus(focusInputOut, focusMenuOut, 'Out');}, 100);},true);
+        document.getElementById('publicMenuOut').addEventListener('blur', function () {focusMenuOut=false;setTimeout(function () {checkSelectorFocus(focusInputOut, focusMenuOut, 'Out');}, 100);},true);
+}
+
+//Нужна мегафункция, которая дёргается из обоих эвентлистенеров, в зависимости от источника, проверяет, нет ли фокуса на втором источнике, если нет на обоих - скрывает
+function checkSelectorFocus (focusInput, focusMenu, sourse) {
+    var $tt = document.getElementById('publicMenu'+sourse).style.height;
+    if (focusInput==false && focusMenu==false) {
+        if ($tt!="0px") {
+            console.log('Пора скрывать: ' + $tt)
+            changePublicMenuState (false, sourse)
+        }
+    }
+    else {
+        if ($tt=="0px") {
+            changePublicMenuState (true, sourse)
+        }
+
+    }
 }
 
 function getInternetExplorerVersion()    {
@@ -620,13 +646,15 @@ function sendRequest (){
     console.log(new Date(timeInInput))
 
 
+
     if (!err) {
-        //var tempReq="gidIn="+selectedIn.gid+"&nameIn="+selectedIn.name+"&countIn="+selectedIn.count+
-        //    "&photoIn="+selectedIn.photo+"&typeIn="+selectedIn.type+"&isClosedIn="+selectedIn.is_closed+"&verifiedIn="+selectedIn.verified+
-        //    "&gidOut="+selectedOut.gid+"&nameOut="+selectedOut.name+"&countOut="+selectedOut.count+
-        //    "&photoOut="+selectedOut.photo+"&typeOut="+selectedOut.type+"&isClosedOut="+selectedOut.is_closed+"&verifiedOut="+selectedOut.verified;
-        var tempReq="gidIn=1&nameIn=false&countIn=1&photoIn=http&typeIn=event&isClosedIn=1&verifiedIn=-0"+
-            "&gidOut="+selectedOut.gid+"&nameOut=123&countOut=0&photoOut="+selectedOut.photo+"&typeOut="+selectedOut.type+"&isClosedOut="+selectedOut.is_closed+"&verifiedOut="+selectedOut.verified;
+        timeInInput=(timeInInput-new Date().getTimezoneOffset()*60*1000)/1000;
+        var tempReq="gidIn="+selectedIn.gid+"&nameIn="+selectedIn.name+"&countIn="+selectedIn.count+
+            "&photoIn="+selectedIn.photo+"&typeIn="+selectedIn.type+"&isClosedIn="+selectedIn.is_closed+"&verifiedIn="+selectedIn.verified+
+            "&gidOut="+selectedOut.gid+"&nameOut="+selectedOut.name+"&countOut="+selectedOut.count+
+            "&photoOut="+selectedOut.photo+"&typeOut="+selectedOut.type+"&isClosedOut="+selectedOut.is_closed+"&verifiedOut="+selectedOut.verified+"&postTime="+timeInInput;
+        //var tempReq="gidIn=1&nameIn=false&countIn=1&photoIn=http&typeIn=event&isClosedIn=1&verifiedIn=-0"+
+        //    "&gidOut="+selectedOut.gid+"&nameOut=123&countOut=0&photoOut="+selectedOut.photo+"&typeOut="+selectedOut.type+"&isClosedOut="+selectedOut.is_closed+"&verifiedOut="+selectedOut.verified+"&postTime=11111111111111111111фыв";
         console.log(tempReq)
         console.log(tempReq.length)
         $.ajax({
@@ -634,7 +662,11 @@ function sendRequest (){
             url: "/add_monitor", //Целевой скрипт
             data: tempReq,
             success: function(answer){ //Здесь call back виде функции с аргументом answer
-                alert( "Прибыли данные: " + answer);} //answer это то что вернул скрипт
+                alert(answer);}, //answer это то что вернул скрипт
+            error: function (err) {
+                alert("Во время выполнения запроса произошла ошибка: " + err.status + ": " + err.statusText)
+                console.log(err)
+            }
         });
     }
 }

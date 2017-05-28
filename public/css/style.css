@@ -111,8 +111,8 @@ a {
 .menuWrapper {
     display: block;
     float: left;
-    margin: 10px;
-    margin-right: 0px;
+    margin: 10px 0px 0px 10px;
+    /*margin-right: 0px;*/
     /*border: 1px solid black;*/
 }
 
@@ -400,6 +400,7 @@ tr:hover {
 .publiclist {
     z-index: 1;
     position: relative;
+    margin: 0px;
     /*background-color: gold;*/
 }
 

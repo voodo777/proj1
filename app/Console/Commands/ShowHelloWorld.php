@@ -42,6 +42,8 @@ class ShowHelloWorld extends Command
     {
         echo 'Hello World!'.PHP_EOL;
         echo date('l jS \of F Y h:i:s A').PHP_EOL;
+        echo time().PHP_EOL;
+        echo date(time()).PHP_EOL;
 
 
 //        $vk = new VkHelper();
